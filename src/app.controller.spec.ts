@@ -15,8 +15,9 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should render the probe page', async () => {
+      const html = await appController.getHello();
+      expect(html).toContain('Klade NestJS probe');
     });
   });
 });
